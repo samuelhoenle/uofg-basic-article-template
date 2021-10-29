@@ -1,49 +1,77 @@
+%!TEX program = pdflatex
+%!TEX options=--shell-escape
+
+\documentclass{uofg-basic-article}
+
 %--------------------
-% Packages
+% Additional Packages
 % -------------------
-\documentclass[11pt,a4paper]{article}
-\usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
-%\usepackage{gentium}
-\usepackage{mathptmx} % Use Times Font
 
-
-\usepackage[pdftex]{graphicx} % Required for including pictures
-\usepackage[swedish]{babel} % Swedish translations
-\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
-\usepackage{calc} % To reset the counter in the document after title page
-\usepackage{enumitem} % Includes lists
-
-\frenchspacing % No double spacing between sentences
-\linespread{1.2} % Set linespace
-\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry} %margins
-%\usepackage{parskip}
-
-\usepackage[all]{nowidow} % Tries to remove widows
 \usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
 
-\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+% Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{lipsum}
+
+% Uncomment if sans-serif font should be used
+%\renewcommand{\familydefault}{\sfdefault}
+
+% Uncomment to remove numbering
+%\setcounter{secnumdepth}{0}
+
+%%% Do not remove
+\usepackage[protrusion=true,expansion=true]{microtype} % improve typography
+\usepackage{anyfontsize} % allow any size of font
+%%%
 
 
 %-----------------------
-% Set pdf information and add title, fill in the fields
+% Set metadata
 %-----------------------
-\hypersetup{ 	
-pdfsubject = {},
-pdftitle = {},
-pdfauthor = {}
+\title{The Title} % the title of the work
+\author{Your Name} % your name
+\date{00 Month 0000} % the date
+\course{The Course} % the name of the course this work is for
+\filename{main} % change this if the name of this file is not "main.tex"
+
+\hypersetup{
+    pdfsubject = {\@title},
+    pdftitle = {\@title},
+    pdfauthor = {\@author}
 }
 
 %-----------------------
 % Begin document
 %-----------------------
-\begin{document} %All text i dokumentet hamnar mellan dessa taggar, allt ovanför är formatering av dokumentet
+\begin{document}
+
+\maketitle
+
+%% ABSTRACT
+\begin{abstract}
+    Your Abstract.
+\end{abstract}
+
+%% TABLE OF CONTENTS
+\tableofcontents
+
+% reset page numbering. Don't remove this!
+\pagenumbering{arabic} 
 
 \section{Introduction}
-
 \lipsum[1-3]
-
 
 \subsection*{Subtitle}
 \lipsum[4-5]
+
+%   BIBLIOGRAPHY   
+
+% The bibliography style is agsm (Harvard)
+% The bibliography always appears last, after the appendices.
+
+\bibliographystyle{agsm}
+
+% (uncomment only if changing document class to report) Force the bibliography not to be numbered
+% \renewcommand{\thechapter}{0} 
+\bibliography{main}
+
 \end{document}

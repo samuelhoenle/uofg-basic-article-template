@@ -1,0 +1,15 @@
+# temp output files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.sum
+*.toc
+svg-inkscape/
+
+# output PDFs
+/*.pdf
