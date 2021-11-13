@@ -25,7 +25,16 @@
 \usepackage{amsmath,amsbsy}
 \usepackage[style]{abstract} % abstract styling
 
+% make all cross-references clickable, enable line breaks for URLs
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{breakurl}
+\usepackage[hidelinks,breaklinks]{hyperref}
+
 % set bibliography styling
+\usepackage{doi}
+\newcommand*{\urlprefix}{Available from: }
+\newcommand*{\urldateprefix}{Accessed }
 \usepackage[sectionbib]{natbib} % remove option sectionbib if using report style
 \bibpunct{(}{)}{;}{a}{}{;}
 
@@ -88,9 +97,6 @@
 % allow section styling
 \usepackage{sectsty}
 
-% make all cross-references clickable
-\usepackage[hidelinks]{hyperref}
-
 % enable styled captions
 \usepackage[format=plain,
 labelfont={bf,it},
@@ -134,7 +140,7 @@ textfont=it,tableposition=above]{caption}
   % main block
   \begin{center}
     % the logo
-    \includesvg[height=4em]{template_ressources/uni_logo.svg}
+    \includesvg[height=3em]{template_ressources/uni_logo.svg}
     \vspace{1em}
 
     % the title
@@ -144,17 +150,17 @@ textfont=it,tableposition=above]{caption}
     \vskip 1em%
 
     % the author and date
-    {\Large
+    {\normalsize
     \textbf{\@author}\\
     \@date}
-    \vskip 1em%
+    \vskip 0.25em%
 
     % course and word count
     \@course{}\\
     \quickwordcount{\@filename{}}
   \end{center}
 
-  \vskip 5em%
+  \vskip 1em%
 
   \setcounter{footnote}{0}%
   \global\let\thanks\relax
