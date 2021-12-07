@@ -5,3 +5,6 @@ out/
 
 # output PDFs
 /*.pdf
+
+# Sublime Text workspace file
+*.sublime-workspace
