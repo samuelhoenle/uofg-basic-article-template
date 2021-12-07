@@ -129,7 +129,6 @@ textfont=it,tableposition=above]{caption}
 \newcommand{\filename}[1]{\renewcommand{\@filename}[1]{#1}}
 \global\newcommand{\@course}{}
 \global\newcommand{\@filename}{main}
-\usepackage{svg}
 \renewcommand\maketitle{
   \definecolor{UniBlue}{HTML}{00355F}
 
@@ -140,7 +139,8 @@ textfont=it,tableposition=above]{caption}
   % main block
   \begin{center}
     % the logo
-    \includesvg[height=3em]{template_ressources/uni_logo.svg}
+    \def\svgwidth{10em}
+    \input{template_ressources/uni_logo_svg-tex.pdf_tex}
     \vspace{1em}
 
     % the title
