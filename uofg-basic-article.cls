@@ -132,10 +132,6 @@ textfont=it,tableposition=above]{caption}
 \renewcommand\maketitle{
   \definecolor{UniBlue}{HTML}{00355F}
 
-  \let\footnotesize\small
-  \let\footnoterule\relax
-  \let\footnote \thanks
-
   % main block
   \begin{center}
     % the logo
